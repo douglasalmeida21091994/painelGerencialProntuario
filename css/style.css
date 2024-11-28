@@ -10,7 +10,7 @@
 .main {    
     max-height: 800;
     overflow-y: auto;
-    padding: 10px;    
+    padding: 0 10px 10px 10px;    
 }
 
 
@@ -39,22 +39,22 @@
     width: 100%;    
     display: flex;    
     align-items: flex-start;    
+    justify-content: space-between;
 }
 
 .section {
-    width: 100%;
-    max-width: 500px;
-    margin: 10px 0;
+    flex: 1; /* Garante que os elementos ocupem a mesma largura */
+    max-width: 500px;    
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;        
-    margin-right: 10px;      
+    margin: 10px 5px; /* Ajuste para equalizar margens */
     transition: all 0.2s ease; 
 }
 
 .section:hover {
-    background-color: #4E76D0;    
-    cursor: pointer;
+    background-color: #4E76D0;  
+    
 }
 
 .section h2 {
@@ -64,10 +64,7 @@
     letter-spacing: 1.2px;
     text-transform: uppercase;
     transition: all 0.2s ease;
-    width: 95%;    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center; /* Centraliza o texto */
 }
 
 .section h2:hover {    
@@ -75,15 +72,21 @@
     transition: all 0.2s ease;
 }
 
-/* AJUSTANDO SCROLL  */
+.conteudos {
+    display: flex; /* Flexbox para alinhar itens lado a lado */
+    gap: 5px;   
+    margin: 0 5px; 
+}
+
 .content-principal {
-    width: 250px;
+    width: 300px; /* Largura fixa ou ajustável */
+    min-width: 300px;
     max-height: 600px;
     overflow-y: auto;
     border-radius: 5px;
-    /* Compatibilidade com Firefox */
-    scrollbar-width: thin; /* Barra fina */
-    scrollbar-color: #4E76D0 #f0f0f0; /* Thumb (scroll) e track (trilha) */
+    /* Mantém o estilo do scroll */
+    scrollbar-width: thin;
+    scrollbar-color: #4e75d098 #f0f0f0;
 }
 
 /* Compatibilidade com navegadores baseados em WebKit (Chrome, Edge, Safari) */
@@ -97,13 +100,20 @@
 }
 
 .content-principal::-webkit-scrollbar-thumb {
-    background-color: #4E76D0; /* Cor do scroll */
+    background-color: #4e75d098; /* Cor do scroll */
     border-radius: 5px; /* Deixa o scroll arredondado */
     border: 2px solid #f0f0f0; /* Adiciona um espaço entre o thumb e a trilha */
 }
 
 .content-principal::-webkit-scrollbar-thumb:hover {
-    background-color: #3658a8; /* Cor ao passar o mouse no scroll */
+    background-color: #3658a89f; /* Cor ao passar o mouse no scroll */
+}
+
+.content-horarios {
+    flex: 1; /* Ocupa o restante do espaço disponível */    
+    height: 600px; /* Altura para manter alinhado com o outro conteúdo */
+    border-radius: 5px; /* Opcional */
+    overflow-y: auto; /* Se necessário, permite scroll vertical */
 }
 
 .medicos {
@@ -115,6 +125,7 @@
     padding: 8px 0;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    border: 1px solid #e0e0e0e8;
 }
 
 .medicos h2 {
@@ -124,13 +135,17 @@
 }
 
 .list-medicos {
-    background-color: #f5f4f4;
+    background-color: #f5f4f4;   
     height: 100px;
     padding: 10px 0 0 10px;
     display: flex;
-    border-bottom: 1px solid #e7e6e6;
+    border-bottom: 1px solid #e7e6e6; 
 }
 
+.list-medicos:hover {
+    background-color: #e7e6e6;
+    cursor: pointer;
+}
 
 
 .list-medicos h2 {
@@ -138,11 +153,17 @@
     color: #4E4E4E;   
 }
 
+.list-medicos h2, h3 {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: #747272;  
+}
+
 .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #e7e6e6;
+    border: 1px solid #ffffffbd;
     background-color: #e7e6e6;
     border-radius: 50%;
     width: 45px;
@@ -163,36 +184,87 @@
     color: #4E4E4E;  
 }
 
-
-.list-medicos h2, h3 {
-    margin-top: 3px;
-    font-size: 0.9rem;
-    color: #747272;  
+.content-horatios {
+    background-color: #747272;
+    height: 500px;
 }
 
+/* DIAS DA SEMANA */
 
 
 
+/* INÍCIO AJUSTES HORÁRIOS AGENDADOS */
 
+.pai {
+    display: flex;
+    overflow-x: auto;
+    max-height: 600px; /* Limita a altura máxima */
+    height: 600px; /* Garante altura consistente */ 
+    white-space: nowrap;
+    cursor: grab;
+    user-select: none;
+}
 
+.content-horarios-agendados {
+    overflow: auto; /* Adiciona o scroll vertical */
+    max-height: 600px; /* Limita a altura máxima */
+    height: 600px; /* Garante altura consistente */
+    width: 300px;
+    min-width: 300px;
+    border-radius: 5px;
+    /*padding: 5px;  Adiciona espaço interno para evitar que o conteúdo toque nas bordas */
+    box-sizing: border-box; /* Garante que padding não afete largura total */
+    margin-right: 5px;
 
+    display: flex;
+    flex-wrap: nowrap;
+}
 
+.icons-pacientes {
+    cursor: pointer;
+}
 
+.horarios {
+    width: 300px;
+    min-width: 300px;
+    max-height: 600px;
+    overflow-y: auto;
+}
 
+.list-pacientes {
+    background-color: #fdfdfd;
+    height: 100px; /* Mantém a altura consistente para cada item */
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    border-bottom: 1px solid #e7e6e6;    
 
+    min-width: 300px;
+    margin-right: 10px;
+}
 
+.list-pacientes:hover {
+    background-color: #e7e6e6;    
+}
 
+.list-pacientes h2 {
+    font-size: 0.8rem;
+    color: #4E4E4E;   
+}
 
+.list-pacientes h2, h3 {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: #747272; 
+    font-weight: 450; 
+}
 
+.horarios-agendados {
+    margin-left: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
+.horarios-agendados h1 {    
+    font-size: 0.9rem;
+    color: #4E4E4E;  
+}
 
