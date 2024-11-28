@@ -7,12 +7,17 @@
     font-family: "Roboto", serif;
 }
 
+.main {    
+    height: 100dvh;
+    padding: 0 10px;
+}
+
 
 .title {    
     text-align: center;
     background-image: linear-gradient(135deg, rgb(75,63,197) 0%,rgb(79,145,214) 100%);
     margin-top: 0;
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
     padding: 10px 5px;    
     text-transform: uppercase;
     color: #fff;
@@ -34,56 +39,92 @@ h2 {
     transition: all 0.3s ease;    
 }
 
-.content {    
-    width: 100%;
-    height: 100dvh;  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;  
+.buttons {    
+    width: 100%;    
+    display: flex;    
+    align-items: flex-start;    
 }
 
 .section {
     width: 100%;
-    max-width: 1200px;
-    margin: 20px 0;
+    max-width: 500px;
+    margin: 10px 0;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;      
+    transition: all 0.3s ease; 
 }
 
 .section h2 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+.section:hover {
+    background-color: #4E76D0;
+    color: #fff;
+    cursor: pointer;
 }
 
-.card {
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.content-principal {
+    height: 100dvh;
+    width: 250px;   
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.medicos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;   
+    background-color: #e7e6e6; 
+    padding: 8px 0;
+    border-top-right-radius: 5px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .logo-img {
-        margin-bottom: 10px;
-    }
+.medicos h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
+
+.list-medicos {
+    background-color: #f5f4f4;
+    height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
