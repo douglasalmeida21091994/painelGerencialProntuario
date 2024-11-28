@@ -8,8 +8,9 @@
 }
 
 .main {    
-    height: 100dvh;
-    padding: 0 10px;
+    max-height: 800;
+    overflow-y: auto;
+    padding: 10px;    
 }
 
 
@@ -34,11 +35,6 @@
     height: 40px;  
 }
 
-h2 {
-    margin: 0 20px;  
-    transition: all 0.3s ease;    
-}
-
 .buttons {    
     width: 100%;    
     display: flex;    
@@ -51,31 +47,63 @@ h2 {
     margin: 10px 0;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 5px;        
     margin-right: 10px;      
-    transition: all 0.3s ease; 
+    transition: all 0.2s ease; 
+}
+
+.section:hover {
+    background-color: #4E76D0;    
+    cursor: pointer;
 }
 
 .section h2 {
     font-size: 1rem;
-    margin: 10px;
+    color: #4E4E4E;
+    padding: 10px;    
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    width: 95%;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.section:hover {
-    background-color: #4E76D0;
-    color: #fff;
-    cursor: pointer;
+.section h2:hover {    
+    color: #fff;    
+    transition: all 0.2s ease;
 }
 
+/* AJUSTANDO SCROLL  */
 .content-principal {
-    height: 100dvh;
-    width: 250px;   
+    width: 250px;
+    max-height: 600px;
+    overflow-y: auto;
+    border-radius: 5px;
+    /* Compatibilidade com Firefox */
+    scrollbar-width: thin; /* Barra fina */
+    scrollbar-color: #4E76D0 #f0f0f0; /* Thumb (scroll) e track (trilha) */
+}
+
+/* Compatibilidade com navegadores baseados em WebKit (Chrome, Edge, Safari) */
+.content-principal::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.content-principal::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor da trilha */
+    border-radius: 5px; /* Deixa a trilha arredondada */
+}
+
+.content-principal::-webkit-scrollbar-thumb {
+    background-color: #4E76D0; /* Cor do scroll */
+    border-radius: 5px; /* Deixa o scroll arredondado */
+    border: 2px solid #f0f0f0; /* Adiciona um espaço entre o thumb e a trilha */
+}
+
+.content-principal::-webkit-scrollbar-thumb:hover {
+    background-color: #3658a8; /* Cor ao passar o mouse no scroll */
 }
 
 .medicos {
@@ -86,21 +114,61 @@ h2 {
     background-color: #e7e6e6; 
     padding: 8px 0;
     border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .medicos h2 {
     font-size: 0.9rem;
     text-transform: uppercase;
+    color: #4E4E4E;
 }
 
 .list-medicos {
     background-color: #f5f4f4;
     height: 100px;
+    padding: 10px 0 0 10px;
+    display: flex;
+    border-bottom: 1px solid #e7e6e6;
 }
 
 
 
+.list-medicos h2 {
+    font-size: 0.8rem;
+    color: #4E4E4E;   
+}
 
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e6e6;
+    background-color: #e7e6e6;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;    
+}
+
+.icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.dados {
+    margin-left: 10px;
+}
+
+.dados h1{    
+    font-size: 0.9rem;
+    color: #4E4E4E;  
+}
+
+
+.list-medicos h2, h3 {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: #747272;  
+}
 
 
 
